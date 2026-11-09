@@ -5,15 +5,28 @@ import { Gallery } from "@/components/site/Gallery";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { Footer, MobileStickyCTA } from "@/components/site/Footer";
 
+const SITE_URL = "https://brilho-e-cuidado-beige.vercel.app";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Brilho & Cuidado — Serviços de limpeza (demonstração)" },
       { name: "description", content: "Limpeza residencial, escritórios, condomínios, pós-obras e limpezas profundas. Prepare o seu pedido de orçamento em poucos passos." },
       { property: "og:title", content: "Brilho & Cuidado — Serviços de limpeza" },
-      { property: "og:description", content: "Website de demonstração: serviços de limpeza com pedido de orçamento interativo." },
+      { property: "og:description", content: "Limpeza de casas, escritórios, condomínios e pós-obras. Peça o seu orçamento em poucos passos." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:site_name", content: "Brilho & Cuidado" },
+      { property: "og:locale", content: "pt_PT" },
+      { property: "og:url", content: SITE_URL },
+      // Square logo: WhatsApp shows it as a small thumbnail next to the link.
+      { property: "og:image", content: `${SITE_URL}/og-logo.jpg` },
+      { property: "og:image:secure_url", content: `${SITE_URL}/og-logo.jpg` },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "600" },
+      { property: "og:image:height", content: "600" },
+      { property: "og:image:alt", content: "Brilho & Cuidado — serviços de limpeza" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:image", content: `${SITE_URL}/og-logo.jpg` },
     ],
   }),
   component: Index,
